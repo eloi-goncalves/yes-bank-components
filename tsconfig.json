@@ -10,7 +10,9 @@
     "esModuleInterop": true,               // Para permitir importações default em módulos CommonJS
     "strict": true,                        // Ativa o modo estrito do TypeScript
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

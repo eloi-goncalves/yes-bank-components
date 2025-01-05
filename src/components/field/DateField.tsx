@@ -1,3 +1,4 @@
+import React from 'react';
 import { FieldProps } from "../../types/field/FieldProps";
 
 const DateField: React.FC<FieldProps> = ({ id, className, label, placeholder, onChange }) => (
