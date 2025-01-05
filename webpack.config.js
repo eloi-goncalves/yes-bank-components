@@ -7,11 +7,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
-    library: 'MinhaBibliotecaReact',
+    library: 'YesBankComponents',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
-  externals: [nodeExternals()], // Exclude external dependencies 
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom',
+  },// Exclude external dependencies 
   module: {
     rules: [
       {
