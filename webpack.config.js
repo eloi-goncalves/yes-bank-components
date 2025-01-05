@@ -1,4 +1,5 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/index.ts', // TypeScript entry point
@@ -9,10 +10,14 @@ module.exports = {
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
-  externals: {
-    react: 'react',
-    'react-dom': 'react-dom',
-  },// Exclude external dependencies 
+  externals: [
+      nodeExternals(),
+      {
+        react: 'react',
+        'react-dom': 'react-dom',
+
+      },// Exclude external dependencies 
+  ],
   module: {
     rules: [
       {
