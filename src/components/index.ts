@@ -1,10 +1,10 @@
-import AttachmentField from "./AttachmentField";
-import DateField from "./DateField";
-import EmailField from "./EmailField";
-import NumberField from "./NumberField";
-import TextField from "./TextField";
-import LookupField from "./LookupField";
-import PasswordField from "./PasswordField";
+import AttachmentField from "./field/AttachmentField";
+import DateField from "./field/DateField";
+import EmailField from "./field/EmailField";
+import NumberField from "./field/NumberField";
+import TextField from "./field/TextField";
+import LookupField from "./field/LookupField";
+import PasswordField from "./field/PasswordField";
 
 export {
   AttachmentField,

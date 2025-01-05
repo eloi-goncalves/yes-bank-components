@@ -1,6 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/index.ts', // TypeScript entry point
