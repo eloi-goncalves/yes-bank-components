@@ -8,7 +8,7 @@
     "start": "webpack --mode development"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eduarda Silva Neves",
   "license": "ISC",
   "description": "",
   "devDependencies": {
