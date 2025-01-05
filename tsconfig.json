@@ -6,8 +6,7 @@
     "moduleResolution": "node",
     "jsx": "react",
     "declaration": true,                   // Gera arquivos de definição (.d.ts)
-    "declarationDir": "./dist/types",      // Diretório para armazenar os arquivos .d.ts
-    "esModuleInterop": true,               // Para permitir importações default em módulos CommonJS
+    "esModuleInterop": true,               // Para permitir importações default em módulos ComamonJS
     "strict": true,                        // Ativa o modo estrito do TypeScript
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
