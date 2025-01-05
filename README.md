@@ -12,8 +12,9 @@
 ### Instalar as Dependências
 * Instale o TypeScript, os tipos para o React e outras dependências necessárias:
 ```json
-npm install react react-dom --save peerDependencies
+npm install react react-dom
 npm install --save-dev typescript @types/react @types/react-dom @babel/preset-typescript babel-loader @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli webpack-node-externals
+npm install --save-dev tslint eslint
 
 ```
 Aqui, além de instalar o TypeScript, estamos também instalando os tipos para o React (@types/react, @types/react-dom) e configurando o Babel para lidar com arquivos TypeScript.
@@ -31,11 +32,12 @@ Aqui, além de instalar o TypeScript, estamos também instalando os tipos para o
     "moduleResolution": "node",
     "jsx": "react",
     "declaration": true,                   // Gera arquivos de definição (.d.ts)
-    "declarationDir": "./dist/types",      // Diretório para armazenar os arquivos .d.ts
-    "esModuleInterop": true,               // Para permitir importações default em módulos CommonJS
+    "esModuleInterop": true,               // Para permitir importações default em módulos ComamonJS
     "strict": true,                        // Ativa o modo estrito do TypeScript
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
@@ -70,7 +72,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
-    library: 'MinhaBibliotecaReact',
+    library: 'YesBankComponents',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
@@ -101,9 +103,9 @@ module.exports = {
   Atualize seu package.json para incluir o script de build, que agora usará o TypeScript e o Webpack.
 
   ```json
-  "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack --mode development"
+   "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
   }
 
   ```
@@ -126,21 +128,20 @@ module.exports = {
 
 ```json
 {
-  "name": "minha-biblioteca-react",
+  "name": "my-microfrontend-library",
   "version": "1.0.0",
-  "description": "Uma biblioteca de componentes React em TypeScript",
+  "description": "A library for creating components for microfrontends.",
   "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",  // Arquivo de tipos
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
-  },
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "echo \"No tests yet\""
   },
-  "keywords": ["react", "componentes", "typescript", "biblioteca"],
-  "author": "Seu Nome",
-  "license": "MIT"
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "@types/node": "^14.0.0"
+  }
 }
 
 ```  
