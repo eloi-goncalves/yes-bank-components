@@ -1,17 +1,12 @@
-import React from 'react';
-import './style.css';
+import React from "react";
+import "./Button.css";
 
-interface ButtonProps {
-  label: string;
-  onClick: () => void;
-}
-
-const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
-  return (
-    <button onClick={onClick}>
-      {label}
-    </button>
-  );
-};
+const Button: React.FC<{ className?: string; title: string; action: () => void }> = ({ className, title, action }) => (
+    <div className={className}>
+        <button className="primary" onClick={action}>
+            {title}
+        </button>
+    </div>
+);
 
 export default Button;
