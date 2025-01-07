@@ -5,6 +5,7 @@ import NumberField from "./field/NumberField";
 import TextField from "./field/TextField";
 import LookupField from "./field/LookupField";
 import PasswordField from "./field/PasswordField";
+import Header from "./header/Header";
 
 export {
   AttachmentField,
@@ -13,5 +14,6 @@ export {
   NumberField,
   TextField,
   LookupField,
-  PasswordField
+  PasswordField,
+  Header,
 };

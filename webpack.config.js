@@ -1,5 +1,6 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
 
 module.exports = {
   entry: './src/index.ts', // TypeScript entry point
@@ -25,10 +26,19 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.css$/,  // Process CSS files
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],  // Inject CSS into JS bundle
+      },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'], //Resolve files TS
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'], //Resolve files TS
   },
   devtool: 'source-map',  // for depuration
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',  // Nome do arquivo CSS final
+    }),
+  ],
 };
