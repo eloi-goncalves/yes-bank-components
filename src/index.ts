@@ -6,6 +6,7 @@ import {
   TextField,
   LookupField,
   PasswordField ,
+  Header
 } from "./components";
 
 
@@ -17,4 +18,5 @@ export {
   TextField,
   LookupField,
   PasswordField,
+  Header
 };

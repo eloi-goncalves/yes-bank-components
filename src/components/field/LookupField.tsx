@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Field.css';
 import { LookupProps } from "../../types/field/LookupProps";
 
 const LookupField: React.FC<LookupProps> = ({ id, value, className, label, options, onChange }) => (
