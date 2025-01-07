@@ -6,7 +6,8 @@ import {
   TextField,
   LookupField,
   PasswordField ,
-  Header
+  Header,
+  Menu,
 } from "./components";
 
 
@@ -18,5 +19,6 @@ export {
   TextField,
   LookupField,
   PasswordField,
-  Header
+  Header,
+  Menu,
 };
