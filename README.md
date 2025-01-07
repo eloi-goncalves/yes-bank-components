@@ -161,3 +161,9 @@ npm publish --access public
 Agora sua biblioteca estará disponível no NPM com suporte a TypeScript e tipos para os seus componentes.
 
 Com esses passos, você configurou um projeto React em TypeScript com uma estrutura bem definida, incluindo uma pasta separada para tipos personalizados. Isso torna sua biblioteca reutilizável e fácil de integrar em outros projetos. Se precisar de mais alguma ajuda, fico à disposição!
+
+
+
+# Ativar next/link 
+* npm install next --peer
+* descomentar a componente link
