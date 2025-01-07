@@ -8,6 +8,7 @@ import {
   PasswordField ,
   Header,
   Menu,
+  Modal,
 } from "./components";
 
 
@@ -21,4 +22,5 @@ export {
   PasswordField,
   Header,
   Menu,
+  Modal,
 };
