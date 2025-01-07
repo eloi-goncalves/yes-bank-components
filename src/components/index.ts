@@ -8,6 +8,7 @@ import PasswordField from "./field/PasswordField";
 import Header from "./header/Header";
 import Menu from "./menu/Menu";
 import Modal from  "./modal/Modal";
+import Dashboard from "./dashboard/Dashboard";
 
 export {
   AttachmentField,
@@ -20,4 +21,5 @@ export {
   Header,
   Menu,
   Modal,
+  Dashboard,
 };

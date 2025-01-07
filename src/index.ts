@@ -9,6 +9,7 @@ import {
   Header,
   Menu,
   Modal,
+  Dashboard,
 } from "./components";
 
 
@@ -23,4 +24,5 @@ export {
   Header,
   Menu,
   Modal,
+  Dashboard,
 };
