@@ -3,10 +3,11 @@ import { DeleteTransactionButtonProps } from "../../types/button/DeleteTransacti
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const DeleteTransactionButton: React.FC<DeleteTransactionButtonProps> = async ({ className, transaction, onDelete, deleteTransaction }) => {
+const DeleteTransactionButton: React.FC<DeleteTransactionButtonProps> = ({ className, transaction, onDelete, deleteTransaction }) => {
+
     const handleDelete = async () => {
         await deleteTransaction(transaction.id);
-        onDelete();
+        onDelete();  // Callback to notify deletion is done
     };
     
     return (
