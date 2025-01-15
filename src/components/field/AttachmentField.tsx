@@ -39,7 +39,7 @@ const AttachmentField:React.FC<AttachmentFieldProps> = ({ urlUpload }) => {
 
       if (response.ok) {
         const data = await response.json();
-        setStatus(`Upload concluído: ${data.uploadedFiles.join(', ')}`);
+        setStatus(`Upload concluído: ${data?.fileName}`);
       } else {
         const error = await response.json().catch(() => ({
           error: 'Erro desconhecido no backend.',
