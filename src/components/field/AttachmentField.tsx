@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './Field.css';
 import { AttachmentFieldProps } from "../../types/field/AttachmenFieldProps";
 
-const AttachmentField:React.FC<AttachmentFieldProps> = ({ urlUpload }) => {
+const AttachmentField:React.FC<AttachmentFieldProps> = ({ urlUpload, onChange }) => {
   const [file, setFile] = useState<FileList | null>(null);
   const [status, setStatus] = useState<string | null>(null);
 
@@ -10,6 +10,7 @@ const AttachmentField:React.FC<AttachmentFieldProps> = ({ urlUpload }) => {
     const fileList = event.target.files;
     if (fileList) {
       setFile(fileList);
+      onChange(event);
     }
   };
 

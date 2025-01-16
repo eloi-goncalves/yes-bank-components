@@ -144,7 +144,7 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
                 <div className={`container ${className}`}>
                     <h2>Nova transação</h2>
                     <div className="fields-gap">
-                        <AttachmentField urlUpload={urlUploadPath ?? `http://localhost:3000/upload`}/>
+                        <AttachmentField urlUpload={urlUploadPath ?? `http://localhost:3000/api/upload`} onChange={onChangeFile}/>
 
                         <TextField
                             id="destinatario"
