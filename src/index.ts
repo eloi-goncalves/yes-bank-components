@@ -16,6 +16,7 @@ import {
   EditTransactionScreen,
   DeleteTransactionButton,
   FilterIconButton,
+  ContainerComponent,
 } from "./components";
 
 
@@ -37,4 +38,5 @@ export {
   EditTransactionScreen,
   DeleteTransactionButton,
   FilterIconButton,
+  ContainerComponent,
 };

@@ -15,6 +15,7 @@ import LoginButton from './button/LoginButton';
 import EditTransactionScreen from './screen/EditTransactionScreen';
 import DeleteTransactionButton from "./button/DeleteTransactionButton";
 import FilterIconButton from "./button/FilterIconButton";
+import ContainerComponent from "./container/Container";
 
 export {
   AttachmentField,
@@ -34,4 +35,5 @@ export {
   EditTransactionScreen,
   DeleteTransactionButton,
   FilterIconButton,
+  ContainerComponent,
 };
