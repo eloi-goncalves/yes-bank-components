@@ -8,7 +8,7 @@ export type Transaction = {
 };
 
 type createTransactionAPI = (transaction: Transaction) => Promise<void>;
-type getTransactionsAPI = (id?: number | string) => Promise<Transaction[]>;
+type getTransactionsAPI = ({ id, description, type } : { id?: number | string, description?: string; type?: string; }) => Promise<Transaction[]>;
 type updateTransactionsAPI = (id: number | string, transaction: Transaction) => Promise<Transaction | undefined>;
 type deleteTransactionsAPI = (id: number | string) => Promise<Transaction | undefined>;
 

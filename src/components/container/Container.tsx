@@ -16,6 +16,7 @@ import LoginButton from '../button/LoginButton';
 import EditTransactionScreen from '../screen/EditTransactionScreen';
 import DeleteTransactionButton from "../button/DeleteTransactionButton";
 import FilterIconButton from "../button/FilterIconButton";
+import FilterComponent from "../filter/filter";
 
 // import { useSelector, useDispatch } from "react-redux";
 // import { setTransaction, updateTransaction } from '../../store/transactionSlice';
@@ -31,6 +32,7 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [successMessage, setSuccessMessage] = useState<string>("");
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [showFilter, setShowFilter] = useState<boolean>(false);
 
     // Redux
     // const dispatch = useDispatch();
@@ -66,13 +68,15 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
         setFile(event.target.value);
     };
 
-    const fetchTransactions = async () => {
+    const fetchTransactions = async ({ id, description, type } : { id?: number | string, description?: string; type?: string; } = {}) => {
         if (getTransactionsAPI) {
-            const data = await getTransactionsAPI();
+            const data = await getTransactionsAPI({ id, description, type });
             if (data) {
-                setTransactions(data);
+              setTransactions(data);
             }
         }
+
+        setShowFilter(false);
         return null;
     };
 
@@ -197,6 +201,8 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
                         onClose={closeModal}
                         type={errorMessage ? 'error' : 'success'}
                     />
+
+                    <FilterComponent showFilter={showFilter} okClick={fetchTransactions}/>
                 </div>
             );
         case 'extrato-detalhado':
@@ -204,7 +210,9 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
                 <div className="container border-gradient">
                     <div className="header-extrato">
                         <h2>Extrato</h2>
-                        <FilterIconButton />
+                        <FilterIconButton className={'filter-icon-button-external'} onClick={()=>{
+                          setShowFilter(true);
+                        }}/>
                     </div>
                     <hr />
                     <div className={className}>
