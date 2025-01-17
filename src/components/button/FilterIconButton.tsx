@@ -1,11 +1,17 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
+import { on } from 'events';
 
 const FilterIconButton: React.FC<{ className?: string; onClick: () => void}> = ({ className, onClick }) => {
+
+    const handleClick = () => {
+        onClick();
+    }
+
     return (
         <div className={className}>
-            <button onClick={onClick} className="icon-button filter-button">
+            <button onClick={handleClick} className="icon-button filter-button">
                 <FontAwesomeIcon icon={faFilter} />
             </button>
         </div>

@@ -11,6 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 25px;
+  width: 150px;
 }
 
 .primary:hover{

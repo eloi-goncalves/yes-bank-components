@@ -3,6 +3,7 @@ import { FilterProps } from '../../types/filter/FilterProps';
 import TextField from '../field/TextField';
 import LookupField from '../field/LookupField';
 import Button from '../button/Button';
+import './Filter.css';
 
 const FilterComponent: React.FC<FilterProps> = ({ showFilter, okClick }) => {
     if (!showFilter) return null;
@@ -21,10 +22,10 @@ const FilterComponent: React.FC<FilterProps> = ({ showFilter, okClick }) => {
     
     return (
         <div className="modal-overlay">
-            <div className={`modal success`}>
+            <div className={`modal-filter`}>
                 <div className="modal-content">
                     <div>
-                      <div className="grid-fields">
+                      <div className="grid-filter">
                         <TextField
                                 id="destinatario"
                                 className="text-field"
@@ -43,7 +44,7 @@ const FilterComponent: React.FC<FilterProps> = ({ showFilter, okClick }) => {
                                     onChange={onChangeTransactionType}
                                 />
                       </div>
-                      <div>
+                      <div className='button-filter'>
                         <Button className="button" title="Filtrar" action={() => okClick({ description:description, type:type })} />
                       </div>
                     </div>

@@ -16,7 +16,7 @@ import LoginButton from '../button/LoginButton';
 import EditTransactionScreen from '../screen/EditTransactionScreen';
 import DeleteTransactionButton from "../button/DeleteTransactionButton";
 import FilterIconButton from "../button/FilterIconButton";
-import FilterComponent from "../filter/filter";
+import FilterComponent from '../filter/Filter';
 
 // import { useSelector, useDispatch } from "react-redux";
 // import { setTransaction, updateTransaction } from '../../store/transactionSlice';
@@ -118,6 +118,11 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
         setIsModalOpen(false);
     };
 
+    const handleOnClickFilterIcon = () => {
+        setShowFilter(true);
+        console.log('ShowFilter True');
+    }
+
     useEffect(() => {
         if (componentType === 'extrato-detalhado' || componentType === 'extrato-simplificado') {
             fetchTransactions();
@@ -201,8 +206,6 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
                         onClose={closeModal}
                         type={errorMessage ? 'error' : 'success'}
                     />
-
-                    <FilterComponent showFilter={showFilter} okClick={fetchTransactions}/>
                 </div>
             );
         case 'extrato-detalhado':
@@ -210,9 +213,7 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
                 <div className="container border-gradient">
                     <div className="header-extrato">
                         <h2>Extrato</h2>
-                        <FilterIconButton className={'filter-icon-button-external'} onClick={()=>{
-                          setShowFilter(true);
-                        }}/>
+                        <FilterIconButton className={'filter-icon-button-external'} onClick={handleOnClickFilterIcon}/>
                     </div>
                     <hr />
                     <div className={className}>
@@ -263,6 +264,7 @@ const ContainerComponent: React.FC<ContainerComponentProps>  = ({ componentType,
                         onClose={closeModal}
                         type={errorMessage ? 'error' : 'success'}
                     />
+                    <FilterComponent showFilter={showFilter} okClick={fetchTransactions}/>
                 </div>
             );
         case 'cartao':
